@@ -1,0 +1,190 @@
+/* nav styles */
+/* :root {
+    --primary-color: #8c057b;
+    --secondary-color: #54034a;
+    --tertiary-color: #380231;
+    --hover-tint: #a33795;
+    --lightest-tint: #fff9fe;
+    --pinkish-tint: #ddb4d7;
+    --darkest-shade: #2e0728;
+  
+    --blue-hue: #339af0;
+    --red-hue: #e03131;
+  } */
+
+.header {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.8rem;
+}
+
+/* header dark */
+.dark .header {
+  background-color: var(--darkest-shade);
+}
+
+.header a:link,
+.header a:visited {
+  color: var(--pinkish-tint);
+}
+
+a.header-link-home:link,
+a.header-link-home:visited,
+.mainNavList li a:link,
+.mainNavList li a:visited {
+  font-family: "Bebas Neue", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.header a:hover,
+.header a:active,
+#colorToggle:hover {
+  color: var(--lightest-tint);
+}
+
+.dark .header a:hover,
+.dark .header a:active {
+  color: #7ae649;
+}
+
+.mainNavList {
+  display: flex;
+  gap: 36px;
+  padding: 12px;
+}
+
+.mainNavList li {
+  list-style: none;
+}
+
+.mainNavList li a.mainNavLink:link,
+.mainNavList li a.mainNavLink:visited {
+  text-decoration: none;
+}
+
+.btnMobileNav {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: none;
+}
+.btnMobileNav .iconMobileNav {
+  height: 48px;
+  width: 48px;
+  color: #ff008c;
+}
+
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #040330b2;
+  height: 70px;
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 999;
+}
+
+/* hero */
+/* button#colorToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  cursor: pointer;
+  background: transparent;
+border: none;
+} */
+
+/* #colorToggle .color-theme-icon {
+  background: transparent;
+} */
+
+.navOpen .mainNav {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 900;
+}
+
+@media screen and (max-width: 768px) {
+  .btnMobileNav {
+    display: block;
+    z-index: 1000;
+  }
+
+  .mainNav {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+
+    /* hide navigation by default */
+    /* display none does not allow animations */
+    /* display: none; */
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    visibility: hidden;
+  }
+  /*   
+    .dark .mainNav {
+      background-color: #121126;
+    } */
+
+  .navOpen .mainNav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 900;
+  }
+
+  /* .nav-open .icon-mobile-nav[name="close-outline"] {
+      display: block;
+    }
+  
+    .nav-open .icon-mobile-nav[name="menu-outline"] {
+      display: none;
+    } */
+
+  .mainNavList {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .mainNavLink:link,
+  .mainNavLink:visited {
+    font-size: 32px;
+  }
+
+  .mainNavList {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mainNavList li a:link,
+  .mainNavList li a:visited {
+    font-size: 42px;
+  }
+}

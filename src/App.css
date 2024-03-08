@@ -1,3 +1,368 @@
-.App {
+/* 
+-- COLOR SYSTEM 
+-------------------------- 
+PRIMARY - #8c057b
+SECONDARY - #54034a
+
+LIGHT - #f4e6f2
+DARK - #0e000c
+
+TEXT - #333
+
+
+-- TYPOGRAPHY SYSTEM
+----------------------------
+- Primary font
+Roboto
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+
+:root {
+  --primary-color: #8c057b;
+  --secondary-color: #54034a;
+  --tertiary-color: #380231;
+  --hover-tint: #a33795;
+  --lightest-tint: #fff9fe;
+  --pinkish-tint: #ddb4d7;
+  --darkest-shade: #2e0728;
+
+  --blue-hue: #339af0;
+  --red-hue: #e03131;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--lightest-tint);
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--darkest-shade);
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  height: calc(100vh - 144px);
+}
+
+/* *************************** */
+/* ******** NAV BAR ********** */
+/* *************************** */
+
+header {
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--lightest-tint);
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  color: var(--secondary-color);
+}
+
+/* ***************************** */
+/* *********** HERO ************ */
+/* ***************************** */
+
+#hero {
+  position: relative;
+  /* height: 100vh; */
+  min-height: 85vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(121, 80, 121, 0.8),
+      rgba(20, 1, 17, 0.5)
+    ),
+    url("../public/images/ethan-wright-petroglyphs-abq.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hero-flex {
+  width: 80%;
+  max-width: 120rem;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+  padding-top: 8.2rem;
+  padding-bottom: 6.4rem;
+
+  margin: 0 auto;
+}
+
+.hero-flex h1 {
+  color: var(--lightest-tint);
+  display: inline-block;
+  font-size: 7.2rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  /* word-spacing: -1.6rem; */
+}
+
+#hero p {
+  color: var(--pinkish-tint);
+}
+
+.hero-text-box a:hover,
+.hero-text-box a:active {
+  background-color: var(--hover-tint);
+  box-shadow: 0 24px 12px 20px rgba(20, 1, 17, 0.3);
+
+  /* transform: scale(1.2); */
+}
+
+.btn-flexbox {
+  margin-top: 1.2rem;
+}
+
+.btn.hero-btn {
+  padding: 1.6rem 3.2rem;
+  background-color: var(--primary-color);
+  color: var(--lightest-tint);
+  text-transform: uppercase;
+}
+
+/* **************************************** */
+/* ************ MAIN CLIENTS ************** */
+/* **************************************** */
+
+.section-header {
+  font-size: 3.2rem;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  /* idk how i feel about this but... */
+  border-bottom: 1px solid var(--secondary-color);
+}
+.heading-featured-in {
   text-align: center;
+  margin: 4.8rem 0;
+}
+
+.logos {
+  max-width: 100%;
+  margin: 3.6rem auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 9.6rem;
+}
+
+.client {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  /* max-width: 600px; */
+  max-height: 200px;
+}
+
+.logos a:link,
+.logos a:visited {
+  font-size: 24px;
+  display: inline-block;
+  margin: 3.6rem 0.8rem;
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  color: var(--lightest-tint);
+  width: 180px;
+  padding: 1.2rem 2.4rem;
+  border-radius: 2px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.logos a:hover,
+.logos a:active {
+  background-color: var(--hover-tint);
+  box-shadow: 0 12px 14px 12px rgba(0, 0, 0, 0.1);
+
+  transform: scale(1.05);
+}
+
+#clients p {
+  font-size: 18px;
+}
+
+.client h2 {
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+#about {
+  padding-top: 6.4rem;
+  color: var(--lightest-tint);
+  min-height: calc(100vh - 72px);
+}
+
+#about h2 {
+  /* text-align: center; */
+  margin-bottom: 3.6rem;
+}
+
+#about p {
+  font-size: 24px;
+  width: 100%;
+}
+
+.section-about {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(34, 5, 34, 0.9),
+      rgba(20, 1, 17, 0.7)
+    ),
+    url("../public/images/john-fowler-nm-tent-ithink-unsplash.jpg");
+  background-position: 70%;
+  height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 0 6px 8px rgba(20, 1, 17, 0.3);
+}
+
+.section-about div.about {
+  /* padding: 12rem 4.6rem; */
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 3.6rem;
+  margin-top: 3.2rem;
+}
+
+#contact p {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+#contact p a:link,
+#contact p a:visited {
+  color: rgb(46, 46, 245);
+}
+.contact-flex-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 9.6rem;
+  margin-top: 7.2rem;
+}
+
+.contact-flex-container h3 {
+  text-decoration: underline;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.biz-hours-blurb {
+  margin-top: 3.6rem;
+  text-align: center;
+}
+
+footer {
+  color: var(--pinkish-tint);
+  background-color: var(--secondary-color);
+  height: 72px;
+  text-align: center;
+  padding: 24px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 960px) {
+  .logos {
+    flex-direction: column;
+  }
+
+  .client {
+    max-width: 100%;
+  }
+
+  .client img {
+    max-width: 100%;
+  }
+
+  .client p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 24px 12px 12px;
+  }
+
+  #clients p {
+    font-size: 22px;
+    padding-left: 8px;
+  }
+  .contact-flex-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  @media (max-width: 480px) {
+    section {
+      padding: 8px;
+    }
+    .section-hero a.btn:link,
+    .section-header a.btn:visited {
+      width: 100%;
+    }
+  }
 }
